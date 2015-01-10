@@ -1,26 +1,36 @@
 # S3Source
 
-TODO: Write a gem description
+Plugin for RubyGems to fix its s3 fetch / download functionality
 
 ## Installation
 
-Add this line to your application's Gemfile:
+This is a RubyGems plugin. To use it, simply install it and RubyGems will automatically detect and use it.
 
-```ruby
-gem 's3_source'
 ```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install s3_source
+gem install s3_source
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+To add an s3 gem source, edit your .gemrc file (usually found at ~/.gemrc). You must add the s3 bucket to the regular `sources`, then add the
+`s3_source` key with a set of credentials for each s3 hostname.
+
+```
+:sources:
+- s3://bucket1/path
+- s3://bucket2/
+- https://rubygems.org/
+s3_source: {
+  bucket1: {
+    id: "AOUEAOEU123123AOEUAO",
+    secret: "aodnuhtdao/saeuhto+19283oaehu/asoeu+123h"
+  },
+  bucket2: {
+    id: "AOUEAOEU123123AOEUAO",
+    secret: "aodnuhtdao/saeuhto+19283oaehu/asoeu+123h"
+  }
+}
+```
 
 ## Contributing
 
